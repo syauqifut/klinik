@@ -1,32 +1,34 @@
-CREATE DATABASE db_klinik;
+-- CREATE DATABASE db_klinik;
 
 USE db_klinik;
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `nama`        VARCHAR(255),
   `username`    VARCHAR(255),
   `email`       VARCHAR(255),
   `nomor`       VARCHAR(20),
   `password`    VARCHAR(255),
-  `usertype_id` INT(2),
-  PRIMARY KEY  (`id`)
+  `kode`        VARCHAR(255),
+  `usertype_id` INT(11),
+  PRIMARY KEY  (`id`),
+  UNIQUE  (`email`, `kode`)
 );
 
-CREATE TABLE `usertype` (
+CREATE TABLE IF NOT EXISTS `usertype` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `nama`        VARCHAR(100),
   PRIMARY KEY  (`id`)
 );
 
-CREATE TABLE `wilayah` (
+CREATE TABLE IF NOT EXISTS `wilayah` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `nama`        VARCHAR(255),
-  `kode`        INT(100),
+  `kode`        VARCHAR(255),
   PRIMARY KEY  (`id`)
 );
 
-CREATE TABLE `obat` (
+CREATE TABLE IF NOT EXISTS `obat` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `nama`        VARCHAR(255),
   `jenis`       VARCHAR(100),
@@ -35,7 +37,7 @@ CREATE TABLE `obat` (
   PRIMARY KEY  (`id`)
 );
 
-CREATE TABLE `tindakan` (
+CREATE TABLE IF NOT EXISTS `tindakan` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `nama`        VARCHAR(255),
   `harga`       DECIMAL,
@@ -43,7 +45,7 @@ CREATE TABLE `tindakan` (
   PRIMARY KEY  (`id`)
 );
 
-CREATE TABLE `periksa` (
+CREATE TABLE IF NOT EXISTS `periksa` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `pasien_id`   INT(11),
   `pegawai_id`  INT(11),
@@ -57,7 +59,7 @@ CREATE TABLE `periksa` (
   PRIMARY KEY  (`id`)
 );
 
-CREATE TABLE `periksa_obat` (
+CREATE TABLE IF NOT EXISTS `periksa_obat` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `pasien_id`   INT(11),
   `obat_id`     INT(11),
@@ -65,10 +67,18 @@ CREATE TABLE `periksa_obat` (
   PRIMARY KEY  (`id`)
 );
 
-CREATE TABLE `periksa_tindakan` (
+CREATE TABLE IF NOT EXISTS `periksa_tindakan` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
   `pasien_id`   INT(11),
   `tindakan_id` INT(11),
   `harga`       DECIMAL,
   PRIMARY KEY  (`id`)
 );
+
+INSERT INTO usertype 
+  (nama) 
+VALUES
+  ('admin'),
+  ('pasien'),
+  ('pegawai')
+;

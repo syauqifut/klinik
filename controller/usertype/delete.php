@@ -1,19 +1,17 @@
 <?php
-// include database connection file
 include_once("../../config/config.php");
- 
-// Get id from URL to delete that user
+
 $id = $_GET['id'];
- 
-// Delete user row from table based on given id
-$result = mysqli_query($mysqli, "DELETE FROM usertype WHERE id=$id");
- 
+
+$query = "DELETE FROM usertype WHERE id=$id";
+$result = mysqli_query($mysqli, $query);
+
 $message = 'User deleted successfully';
 
-    echo "
+echo "
     <script>
-    alert('$message');
-    window.location.href='/klinik/usertype';
+        alert('$message');
+        window.location.href='/klinik/usertype';
     </script>
-    ";
+";
 ?>

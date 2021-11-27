@@ -3,6 +3,7 @@
 ?>
 
 <div class="wrapper">
+
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -34,8 +35,6 @@
                                     <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
                                 </div>
                             </div>
-                            <!-- /.card-body -->
-
                             <div class="card-footer">
                                 <button type="submit" name="update" value="Update" class="btn btn-primary">Submit</button>
                             </div>
@@ -45,4 +44,5 @@
             </div>
         </div>
     </section>
+    
 </div>

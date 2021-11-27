@@ -1,4 +1,5 @@
 <div class="wrapper">
+
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -29,8 +30,6 @@
                                     <input type="text" class="form-control" id="exampleInputEmail1" name="nama" placeholder="Enter email">
                                 </div>
                             </div>
-                            <!-- /.card-body -->
-
                             <div class="card-footer">
                                 <button type="submit" name="Submit" value="Add" class="btn btn-primary">Submit</button>
                             </div>

@@ -1,5 +1,5 @@
 <?php
-include_once('controller/usertype/index.php');
+    include_once('controller/usertype/index.php');
 ?>
 
 <div class="wrapper">
@@ -55,4 +55,5 @@ include_once('controller/usertype/index.php');
             </div>
         </div>
     </section>
+
 </div>

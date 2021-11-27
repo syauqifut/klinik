@@ -11,8 +11,17 @@
     }
 
     //All route
-    //auth route -> template.php -> route.php
     switch ($request) {
+        //Auth route
+        case $url.'/login':
+            require "views/auth/login.php";
+            break;
+        case $url.'/register':
+            require "views/auth/register.php";
+            break;
+
+         
+        //Authed route    
         case $url.'/usertype' :
             require "template.php";
             break;
@@ -58,6 +67,7 @@
         case $url.'/wilayahedit?id='. $id:
             require "template.php";
             break;
+
         default:
             http_response_code(404);
             echo "404";

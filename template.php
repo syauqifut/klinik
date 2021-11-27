@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header("Location: /klinik/login");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +48,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Login</a>
+                    <a href="#" class="nav-link">Hi, <?= $_SESSION['nama'] ?></a>
                 </li>
             </ul>
 
@@ -51,6 +59,12 @@
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fas fa-th-large"></i>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <div class="dropdown-divider">Log</div>
+                        <a class="nav-link" href="/klinik/controller/auth/logout.php">
+                            Log Out
+                        </a>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -70,46 +84,56 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
-                            <a href="/klinik/user" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    User
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/klinik/usertype" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Usertype
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/klinik/wilayah" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Wilayah
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/klinik/obat" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Obat
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/klinik/tindakan" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Tindakan
-                                </p>
-                            </a>
-                        </li>
+                        <?php if ($_SESSION['type'] == 'admin') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/user" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        User
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'admin') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/usertype" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Usertype
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/wilayah" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Wilayah
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai' || $_SESSION['type'] == 'pasien') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/obat" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Obat
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai' || $_SESSION['type'] == 'pasien') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/tindakan" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Tindakan
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -124,6 +148,7 @@
                 <div class="container-fluid">
                     <!-- Main row -->
                     <!-- <div class="row pt-2 pl-2"> -->
+
 
                     <?php require "route.php"; ?>
 

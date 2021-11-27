@@ -5,6 +5,7 @@
     // echo $url;
     // For get URL PATH
     $request = $_SERVER['REQUEST_URI'];
+    $id = '';
     if(isset($_GET['id'])){
         $id = $_GET['id'];
     }
@@ -21,8 +22,41 @@
         case $url.'/usertypeedit?id='. $id:
             require "template.php";
             break;
-        case $url.'/contact' :
-            require "views/contact.php";
+        case $url.'/user' :
+            require "template.php";
+            break;
+        case $url.'/useradd' :
+            require "template.php";
+            break;
+        case $url.'/useredit?id='. $id:
+            require "template.php";
+            break;
+        case $url.'/obat' :
+            require "template.php";
+            break;
+        case $url.'/obatadd' :
+            require "template.php";
+            break;
+        case $url.'/obatedit?id='. $id:
+            require "template.php";
+            break;
+        case $url.'/tindakan' :
+            require "template.php";
+            break;
+        case $url.'/tindakanadd' :
+            require "template.php";
+            break;
+        case $url.'/tindakanedit?id='. $id:
+            require "template.php";
+            break;
+        case $url.'/wilayah' :
+            require "template.php";
+            break;
+        case $url.'/wilayahadd' :
+            require "template.php";
+            break;
+        case $url.'/wilayahedit?id='. $id:
+            require "template.php";
             break;
         default:
             http_response_code(404);

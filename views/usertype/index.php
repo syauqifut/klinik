@@ -44,7 +44,7 @@
                                         echo "<tr>";
                                         echo "<td>" . $i++ . "</td>";
                                         echo "<td>" . $user_data['nama'] . "</td>";
-                                        echo "<td><a href='usertypeedit?id=$user_data[id]'>Edit</a> | <a href='/klinik/controller/usertype/delete.php?id=$user_data[id]'>Delete</a></td></tr>";
+                                        echo "<td><a class='btn btn-warning' href='usertypeedit?id=$user_data[id]'>Edit</a> | <a class='btn btn-danger' href='/klinik/controller/usertype/delete.php?id=$user_data[id]'>Delete</a></td></tr>";
                                     }
                                     ?>
                                 </tbody>

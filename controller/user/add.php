@@ -23,10 +23,11 @@ if (isset($_POST['Submit'])) {
     $email          = $_POST['email'];
     $nomor          = $_POST['nomor'];
     $usertype_id    = $_POST['usertype_id'];
+    $wilayah_id     = $_POST['wilayah_id'];
     $password       = password_hash($_POST['password'], PASSWORD_DEFAULT);;
     $kode           = $kodeunik;
 
-    $query = "INSERT INTO user(nama, username, email, nomor, usertype_id, password, kode) VALUES('$nama', '$username', '$email', '$nomor', '$usertype_id', '$password', '$kode')";
+    $query = "INSERT INTO user(nama, username, email, nomor, usertype_id, password, kode, wilayah_id) VALUES('$nama', '$username', '$email', '$nomor', '$usertype_id', '$password', '$kode', '$wilayah_id')";
     $result = mysqli_query($mysqli, $query);
 
     $message = 'User added successfully';

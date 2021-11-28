@@ -1,5 +1,5 @@
 <?php
-    include_once('controller/user/addtype.php');
+    include_once('controller/user/adddata.php');
 ?>
 
 <div class="wrapper">
@@ -51,6 +51,18 @@
                                         <option value="" disabled selected>--- Pilih ---</option>
                                         <?php
                                             while ($data = mysqli_fetch_array($result)) {
+                                                $id = $data['id'];
+                                                echo "<option value='$id'>" . $data['nama'] . "</option>";
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">Wilayah:</label>
+                                    <select name="wilayah_id" class="form-control">
+                                        <option value="" disabled selected>--- Pilih ---</option>
+                                        <?php
+                                            while ($data = mysqli_fetch_array($result1)) {
                                                 $id = $data['id'];
                                                 echo "<option value='$id'>" . $data['nama'] . "</option>";
                                             }

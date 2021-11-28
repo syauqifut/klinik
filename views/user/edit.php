@@ -51,9 +51,20 @@
                                     <select name="usertype_id" class="form-control">
                                         <?php
                                             while ($usertype_data = mysqli_fetch_array($result1)) {
-                                                $idtype = $usertype_data['id'];
-                                                echo "<option value='$idtype' ($idtype == $usertype_id) ? selected : '' >" . $usertype_data['nama'] . "</option>";
-                                            }
+                                                $idtype = $usertype_data['id']; ?>
+                                                <option value="<?= $idtype ?>" <?php if($usertype_id==$idtype) echo 'selected="selected"'; ?> ><?= $usertype_data['nama']; ?></option>
+                                            <?php }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type">Wilayah:</label>
+                                    <select name="wilayah_id" class="form-control">
+                                        <?php
+                                            while ($usertype_data = mysqli_fetch_array($result2)) {
+                                                $id = $usertype_data['id']; ?>
+                                                <option value="<?= $id ?>" <?php if($wilayah_id==$id) echo 'selected="selected"'; ?> ><?= $usertype_data['nama']; ?></option>
+                                            <?php }
                                         ?>
                                     </select>
                                 </div>

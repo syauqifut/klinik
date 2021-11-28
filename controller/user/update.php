@@ -9,8 +9,9 @@ if (isset($_POST['update'])) {
     $email = $_POST['email'];
     $nomor = $_POST['nomor'];
     $usertype_id = $_POST['usertype_id'];
+    $wilayah_id = $_POST['wilayah_id'];
 
-    $query = "UPDATE user SET nama='$nama', username='$username', email='$email', nomor='$nomor', usertype_id='$usertype_id' WHERE id='$id'";
+    $query = "UPDATE user SET nama='$nama', username='$username', email='$email', nomor='$nomor', usertype_id='$usertype_id', wilayah_id='$wilayah_id' WHERE id='$id'";
     $result = mysqli_query($mysqli, $query);
     
     $message = 'User updated successfully';

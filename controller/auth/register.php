@@ -6,11 +6,12 @@ include_once("../../config/config.php");
     $username       = $_POST['username'];
     $email          = $_POST['email'];
     $nomor          = $_POST['nomor'];
+    $wilayah_id     = $_POST['wilayah_id'];
     $usertype_id    = 2;
     $password       = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $kode           = '';
 
-    $query = "INSERT INTO user(nama, username, email, nomor, usertype_id, password, kode) VALUES('$nama', '$username', '$email', '$nomor', '$usertype_id', '$password', '$kode')";
+    $query = "INSERT INTO user(nama, username, email, nomor, usertype_id, password, kode, wilayah_id) VALUES('$nama', '$username', '$email', '$nomor', '$usertype_id', '$password', '$kode', '$wilayah_id')";
     $result = mysqli_query($mysqli, $query);
 
     $regemail      = $mysqli->real_escape_string($_POST['email']);

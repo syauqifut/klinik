@@ -39,6 +39,7 @@
                                         <th>Nomor HP</th>
                                         <th>Tipe User</th>
                                         <th>Kode</th>
+                                        <th>Wilayah</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -54,6 +55,7 @@
                                         echo "<td>" . $data['nomor'] . "</td>";
                                         echo "<td>" . $data['type'] . "</td>";
                                         echo "<td>" . $data['kode'] . "</td>";
+                                        echo "<td>" . $data['wilayah'] . "</td>";
                                         echo "<td><a class='btn btn-warning' href='useredit?id=$data[id]'>Edit</a> | <a class='btn btn-danger' href='/klinik/controller/user/delete.php?id=$data[id]'>Delete</a></td></tr>";
                                     }
                                     ?>

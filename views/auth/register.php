@@ -1,3 +1,7 @@
+<?php
+    include_once('controller/auth/registerdata.php');
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -76,6 +80,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="input-group mb-3">
+                        <select name="wilayah_id" class="form-control">
+                            <option value="" selected disabled>Wilayah</option>
+                            <?php
+                                while ($usertype_data = mysqli_fetch_array($result)) {
+                                    $id = $usertype_data['id']; ?>
+                                    <option value="<?= $id ?>" ><?= $usertype_data['nama']; ?></option>
+                                <?php }
+                            ?>
+                        </select>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-map-marker-alt"></span>
+                            </div>
+                        </div>
+                      </div>
                     <div class="row">
                         <div class="col-8">
                         </div>

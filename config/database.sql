@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password`    VARCHAR(255),
   `kode`        VARCHAR(255),
   `usertype_id` INT(11),
+  `wilayah_id`  INT(11),
   PRIMARY KEY  (`id`),
   UNIQUE  (`email`, `kode`)
 );

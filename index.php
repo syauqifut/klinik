@@ -21,7 +21,13 @@
             break;
 
          
-        //Authed route    
+        //Authed route  
+        //laporan 
+        case $url.'/laporan' :
+            require "template.php";
+            break;
+
+        //usertype
         case $url.'/usertype' :
             require "template.php";
             break;
@@ -31,6 +37,8 @@
         case $url.'/usertypeedit?id='. $id:
             require "template.php";
             break;
+
+        //user
         case $url.'/user' :
             require "template.php";
             break;
@@ -40,6 +48,8 @@
         case $url.'/useredit?id='. $id:
             require "template.php";
             break;
+
+        //obat
         case $url.'/obat' :
             require "template.php";
             break;
@@ -49,6 +59,8 @@
         case $url.'/obatedit?id='. $id:
             require "template.php";
             break;
+
+        //tindakan
         case $url.'/tindakan' :
             require "template.php";
             break;
@@ -58,6 +70,8 @@
         case $url.'/tindakanedit?id='. $id:
             require "template.php";
             break;
+
+        //wilayah
         case $url.'/wilayah' :
             require "template.php";
             break;
@@ -67,23 +81,28 @@
         case $url.'/wilayahedit?id='. $id:
             require "template.php";
             break;
-
+        
+        //periksa pasien
         case $url.'/periksa' :
             require "template.php";
             break; 
+        case $url.'/periksadaftar' :
+            require "template.php";
+            break;
         case $url.'/periksaobat?id='. $id :
             require "template.php";
             break; 
         case $url.'/periksatindakan?id='. $id :
             require "template.php";
             break; 
+
+        //periksa perawat
         case $url.'/periksalist' :
             require "template.php";
             break; 
         case $url.'/periksaselesai?id='. $id :
             require "template.php";
             break; 
-            
         case $url.'/periksalistobat?id='. $id :
             require "template.php";
             break; 
@@ -95,17 +114,16 @@
             break; 
         case $url.'/periksalisttindakanadd?id='. $id :
             require "template.php";
-            break; 
-        case $url.'/periksadaftar' :
-            require "template.php";
-            break; 
+            break;  
 
+        //transaksi
         case $url.'/transaksi' :
             require "template.php";
             break; 
         case $url.'/transaksibayar?id='. $id :
             require "template.php";
             break;
+
         default:
             http_response_code(404);
             echo "404";

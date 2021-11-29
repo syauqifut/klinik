@@ -10,6 +10,12 @@
     }
 
     switch ($request) {
+        //laporan
+        case $url.'/laporan' :
+            require "views/laporan/index.php";
+            break;
+            
+        //usertype
         case $url.'/usertype' :
             require "views/usertype/index.php";
             break;
@@ -19,6 +25,8 @@
         case $url.'/usertypeedit?id='.$id :
             require "views/usertype/edit.php";
             break;
+
+        //user
         case $url.'/user' :
             require "views/user/index.php";
             break;
@@ -28,6 +36,8 @@
         case $url.'/useredit?id='. $id:
             require "views/user/edit.php";
             break;
+            
+        //obat
         case $url.'/obat' :
             require "views/obat/index.php";
             break;
@@ -37,6 +47,8 @@
         case $url.'/obatedit?id='. $id:
             require "views/obat/edit.php";
             break;
+
+        //tindakan
         case $url.'/tindakan' :
             require "views/tindakan/index.php";
             break;
@@ -46,6 +58,8 @@
         case $url.'/tindakanedit?id='. $id:
             require "views/tindakan/edit.php";
             break;
+
+        //wilayah
         case $url.'/wilayah' :
             require "views/wilayah/index.php";
             break;
@@ -56,10 +70,13 @@
             require "views/wilayah/edit.php";
             break;
 
-
+        //periksa pasien
         case $url.'/periksa' :
             require "views/periksa/index.php";
             break; 
+        case $url.'/periksadaftar' :
+            require "views/periksa/daftar.php";
+            break;
         case $url.'/periksaobat?id='. $id :
             require "views/periksa/obat.php";
             break; 
@@ -67,6 +84,7 @@
             require "views/periksa/tindakan.php";
             break; 
 
+        //periksa perawat
         case $url.'/periksalist' :
             require "views/periksa/periksa.php";
             break; 
@@ -85,11 +103,8 @@
         case $url.'/periksalisttindakanadd?id='. $id :
             require "views/periksa/tindakanadd.php";
             break; 
-            
-        case $url.'/periksadaftar' :
-            require "views/periksa/daftar.php";
-            break; 
 
+        //transaksi
         case $url.'/transaksi' :
             require "views/transaksi/index.php";
             break;

@@ -17,20 +17,20 @@ if($ktm_login>=1){
         $_SESSION['email']=$data_login['email'];
         $_SESSION['nama']=$data_login['nama'];
 
-        if($data_login['usertype_id'] == '1'){
+        if($data_login['usertype_id'] == '1'){ //admin
 
     		$_SESSION['type'] = 'admin';
-    		header("Location: /klinik/user");
+    		header("Location: /klinik/laporan");
 
-    	}else if($data_login['usertype_id'] == '3'){
+    	}else if($data_login['usertype_id'] == '3'){ //perawat
             
     		$_SESSION['type'] = 'pegawai';
-    		header("Location: /klinik/wilayah");
+    		header("Location: /klinik/periksalist");
 
-    	}else if($data_login['usertype_id'] == '2'){
+    	}else if($data_login['usertype_id'] == '2'){ //pasien
             
     		$_SESSION['type'] = 'pasien' ;
-    		header("Location: /klinik/obat");
+    		header("Location: /klinik/periksa");
     	}else{
     	    header("Location: /klinik/login?pesan=gagal");
     	}

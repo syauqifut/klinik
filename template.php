@@ -86,6 +86,16 @@ if (!isset($_SESSION['email'])) {
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <?php if ($_SESSION['type'] == 'admin') { ?>
                             <li class="nav-item">
+                                <a href="/klinik/laporan" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Laporan
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'admin') { ?>
+                            <li class="nav-item">
                                 <a href="/klinik/user" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
@@ -104,7 +114,7 @@ if (!isset($_SESSION['email'])) {
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai') { ?>
+                        <?php if ($_SESSION['type'] == 'admin') { ?>
                             <li class="nav-item">
                                 <a href="/klinik/wilayah" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
@@ -114,7 +124,7 @@ if (!isset($_SESSION['email'])) {
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai' || $_SESSION['type'] == 'pasien') { ?>
+                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai') { ?>
                             <li class="nav-item">
                                 <a href="/klinik/obat" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
@@ -124,12 +134,42 @@ if (!isset($_SESSION['email'])) {
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai' || $_SESSION['type'] == 'pasien') { ?>
+                        <?php if ($_SESSION['type'] == 'admin' || $_SESSION['type'] == 'pegawai') { ?>
                             <li class="nav-item">
                                 <a href="/klinik/tindakan" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
                                         Tindakan
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'pasien') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/periksa" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Periksa
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'pegawai') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/periksalist" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Periksa
+                                    </p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['type'] == 'pasien') { ?>
+                            <li class="nav-item">
+                                <a href="/klinik/transaksi" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Transaksi
                                     </p>
                                 </a>
                             </li>

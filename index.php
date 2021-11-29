@@ -68,6 +68,44 @@
             require "template.php";
             break;
 
+        case $url.'/periksa' :
+            require "template.php";
+            break; 
+        case $url.'/periksaobat?id='. $id :
+            require "template.php";
+            break; 
+        case $url.'/periksatindakan?id='. $id :
+            require "template.php";
+            break; 
+        case $url.'/periksalist' :
+            require "template.php";
+            break; 
+        case $url.'/periksaselesai?id='. $id :
+            require "template.php";
+            break; 
+            
+        case $url.'/periksalistobat?id='. $id :
+            require "template.php";
+            break; 
+        case $url.'/periksalistobatadd?id='. $id :
+            require "template.php";
+            break; 
+        case $url.'/periksalisttindakan?id='. $id :
+            require "template.php";
+            break; 
+        case $url.'/periksalisttindakanadd?id='. $id :
+            require "template.php";
+            break; 
+        case $url.'/periksadaftar' :
+            require "template.php";
+            break; 
+
+        case $url.'/transaksi' :
+            require "template.php";
+            break; 
+        case $url.'/transaksibayar?id='. $id :
+            require "template.php";
+            break;
         default:
             http_response_code(404);
             echo "404";

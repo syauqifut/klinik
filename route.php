@@ -55,6 +55,48 @@
         case $url.'/wilayahedit?id='. $id:
             require "views/wilayah/edit.php";
             break;
+
+
+        case $url.'/periksa' :
+            require "views/periksa/index.php";
+            break; 
+        case $url.'/periksaobat?id='. $id :
+            require "views/periksa/obat.php";
+            break; 
+        case $url.'/periksatindakan?id='. $id :
+            require "views/periksa/tindakan.php";
+            break; 
+
+        case $url.'/periksalist' :
+            require "views/periksa/periksa.php";
+            break; 
+        case $url.'/periksaselesai?id='. $id :
+            require "views/periksa/periksaselesai.php";
+            break; 
+        case $url.'/periksalistobat?id='. $id :
+            require "views/periksa/periksaobat.php";
+            break;
+        case $url.'/periksalistobatadd?id='. $id :
+            require "views/periksa/obatadd.php";
+            break; 
+        case $url.'/periksalisttindakan?id='. $id :
+            require "views/periksa/periksatindakan.php";
+            break; 
+        case $url.'/periksalisttindakanadd?id='. $id :
+            require "views/periksa/tindakanadd.php";
+            break; 
+            
+        case $url.'/periksadaftar' :
+            require "views/periksa/daftar.php";
+            break; 
+
+        case $url.'/transaksi' :
+            require "views/transaksi/index.php";
+            break;
+        case $url.'/transaksibayar?id='. $id :
+            require "views/transaksi/bayar.php";
+            break; 
+
         default:
             http_response_code(404);
             echo "404";

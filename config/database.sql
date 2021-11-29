@@ -54,15 +54,15 @@ CREATE TABLE IF NOT EXISTS `periksa` (
   `tanggal`     DATETIME,
   `totalharga`  DECIMAL,
   `pembayaran`  VARCHAR(255),
-  `buktibayar`  VARCHAR(255),
   `tglbayar`    DATETIME,
   `keterangan`  VARCHAR(255),
+  `status`      VARCHAR(255),
   PRIMARY KEY  (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `periksa_obat` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
-  `pasien_id`   INT(11),
+  `periksa_id`  INT(11),
   `obat_id`     INT(11),
   `harga`       DECIMAL,
   PRIMARY KEY  (`id`)
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `periksa_obat` (
 
 CREATE TABLE IF NOT EXISTS `periksa_tindakan` (
   `id`          INT(11)         NOT NULL        AUTO_INCREMENT,
-  `pasien_id`   INT(11),
+  `periksa_id`  INT(11),
   `tindakan_id` INT(11),
   `harga`       DECIMAL,
   PRIMARY KEY  (`id`)

@@ -43,7 +43,6 @@ include_once('controller/periksa/index.php');
                                         echo "<tr>";
                                         echo "<td>" . $i++ . "</td>";
                                         echo "<td>" . date('l, d F Y', strtotime($data['tanggal'])) . "</td>";
-                                        echo "<td><a class='btn btn-warning' href='obatedit?id=$data[id]'>Edit</a> | <a class='btn btn-danger' href='/klinik/controller/obat/delete.php?id=$data[id]'>Delete</a></td></tr>";
                                     }
                                     ?>
                                 </tbody>

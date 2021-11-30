@@ -14,7 +14,7 @@ if (isset($_POST['Submit'])) {
     echo "
         <script>
             alert('$message');
-            window.location.href='/klinik/tindakan';
+            window.location.href='/klinik/periksa';
         </script>
     ";
 }

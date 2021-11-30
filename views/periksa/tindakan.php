@@ -25,7 +25,7 @@ include_once('controller/periksa/tindakan.php');
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Obat</h3>
+                            <h3 class="card-title">Tindakan</h3>
 
                         </div>
                         <div class="card-body table-responsive p-0">
@@ -33,9 +33,8 @@ include_once('controller/periksa/tindakan.php');
                                 <thead>
                                     <tr>
                                         <th>Nomor</th>
-                                        <th>Nama Obat</th>
-                                        <th>Jenis Obat</th>
-                                        <th>Harga Obat</th>
+                                        <th>Nama Tindakan</th>
+                                        <th>Harga Tindakan</th>
                                         <th>Keterangan</th>
                                     </tr>
                                 </thead>
@@ -46,7 +45,6 @@ include_once('controller/periksa/tindakan.php');
                                         echo "<tr>";
                                         echo "<td>" . $i++ . "</td>";
                                         echo "<td>" . $data['nama'] . "</td>";
-                                        echo "<td>" . $data['jenis'] . "</td>";
                                         echo "<td>" . $data['harga'] . "</td>";
                                         echo "<td>" . $data['keterangan'] . "</td>";
                                     }

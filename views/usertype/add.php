@@ -27,7 +27,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nama</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="nama" placeholder="Enter email">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="nama" placeholder="Enter nama">
                                 </div>
                             </div>
                             <div class="card-footer">

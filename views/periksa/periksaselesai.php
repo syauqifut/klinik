@@ -24,7 +24,7 @@
                 <div class="col-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Obat</h3>
+                            <h3 class="card-title">Selesaikan Periksa</h3>
                         </div>
                         <form action="/klinik/controller/periksa/periksaselesai.php" method="post" name="form1">
                             <input type="hidden" class="form-control" name="id" value="<?= $_GET['id'] ?>" >

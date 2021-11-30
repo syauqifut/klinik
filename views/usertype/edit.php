@@ -31,7 +31,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nama</label>
-                                    <input type="text" class="form-control" name="nama" value=<?php echo $nama;?>>
+                                    <input type="text" class="form-control" name="nama" value='<?php echo $nama;?>'>
                                     <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
                                 </div>
                             </div>
